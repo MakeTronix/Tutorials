@@ -1,11 +1,11 @@
 #!/usr/bin/python
 #
-# THIS IS THE RPiLarm library
+# This is the MakeTronix.co.uk Alarm Library
 #
-# This is a means of talking to the components of RPiLarm
+# This is a means of talking to the components of MakeTronix.co.uk Alarm
 #
 # Created by Zachary Igielman, December 2015
-# Copyright Zachary Igielman & Jake Blumenow, Bluemantech (RPiLarm)
+# Copyright Zachary Igielman & Jake Blumenow, MakeTronix (Alarm)
 #
 # This code is in the public domain and may be freely copied and used
 # No warranty is provided or implied
@@ -15,11 +15,11 @@
 # General Functions
 # (Both versions)
 #
-# init(). Initialises GPIO pins, switches motors and LEDs Off, etc
-# cleanup(). Sets all motors and LEDs off and sets GPIO to standard values
+# init(). Initialises GPIO pins
+# cleanup(). Turns all components off and sets GPIO to standard values
 #======================================================================
 #======================================================================
-# RPiLarm Functions
+# Alarm Functions
 #
 # getMotion(): returns the state of the motion sensor
 # getKey(): waits for user to press and returns the number
@@ -45,7 +45,7 @@ PIR = 8
 
 # General Functions
 #
-# init(). Initialises GPIO pins, switches motors and LEDs Off, etc
+# init(). Initialises GPIO pins
 def init():
     #use physical pin numbering
     GPIO.setmode(GPIO.BOARD)
@@ -59,7 +59,7 @@ def init():
         GPIO.setup(v, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
-# cleanup(). Sets all motors and LEDs off and sets GPIO to standard values
+# cleanup(). Turns all components off and sets GPIO to standard values
 def cleanup():
     GPIO.output(BUZZER, 0)
     GPIO.output(LED, 0)
@@ -75,7 +75,7 @@ def cleanup():
 
 
 #======================================================================
-# RPiLarm Functions
+# Alarm Functions
 
 # getMotion(): returns the state of the motion sensor
 def getMotion():
